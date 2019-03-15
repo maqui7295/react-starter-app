@@ -1,0 +1,102 @@
+.share_sidebar_fixed {
+   background: #555555;
+}
+
+.share_sidebar_sticky {
+        position: relative;
+        display: flex;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+ .share_sidebar_sticky .side_link{
+        padding: 15px 8px 8px 8px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #f9f9f9;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+ .share_sidebar_sticky .side_link:hover, share_sidebar_sticky .side_link.active{
+        text-decoration: none;
+        color: #f9f637;
+    }
+
+
+@media screen and (max-height: 450px) {
+    .share_sidebar_sticky {
+        padding-top: 15px;
+    }
+    .share_sidebar_sticky .side_link {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .share_sidebar_fixed {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100; /* Behind the navbar */
+        padding: 0;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    }
+
+    .share_sidebar_sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        display: block;
+        top: 50px; /* Height of navbar */
+        height: calc(100vh - 50px);
+        padding-top: 2rem;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+
+    .share_sidebar_sticky .side_link{
+        padding: 10px 8px 8px 38px;
+        font-size: 18px;
+        display: block;
+    }
+
+        .share_sidebar_fixed .side_link {
+            font-weight: 500;
+        }
+
+    .share_sidebar_sticky .side_link{
+        padding: 10px 8px 8px 38px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f9f9f9;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .share_sidebar_sticky .header {
+        padding: 30px 8px 8px 25px;
+        font-size: 25px;
+        font-weight: lighter;
+        color: #f9f9f9;
+    }
+
+    .share_sidebar_sticky .side_link:first-child {
+        padding-top: 30px;
+    }
+
+    .share_sidebar_sticky .side_link:hover, .share_sidebar_sticky .side_link.active{
+        text-decoration: none;
+        color: #f9f637;
+        opacity: 0.8;
+    }
+
+
+
+}
+

@@ -1,0 +1,199 @@
+.music_nav .music_link {
+    padding: 15px 15px 2px;
+    font-size: 15px;
+     display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3ms;
+}
+
+.music_nav .music_link:hover:not(.active) {
+    text-decoration: none;
+    border-bottom: 2px solid #f9f637;
+    opacity: 0.8;
+    color: #f9f637;
+}
+
+.music_nav .music_link.active {
+    border-bottom: 3px solid #f9f637;
+    opacity: 0.8;
+    color: #f9f637;
+}
+
+.music_nav_logo .logo {
+    color: #f9f637;
+    padding: 12px 15px 5px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.openTopNav {
+    font-size:18px;
+    cursor:pointer;
+    color:white;
+    padding: 15px;
+}
+
+.openSideNav {
+    font-size:18px;
+    cursor:pointer;
+    color:white;
+    padding: 15px;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(22, 22, 22);
+    background-color: rgba(22, 22, 22, 0.7);
+    overflow-y: hidden;
+    transition: 0.5s;
+    border-top: 2px solid #f9f637;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay .top_link {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .top_link:hover,
+.overlay .top_link:focus {
+    color: #f0f0f0;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 50px;
+    color: #f9f637;
+    text-decoration: none;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.music_nav {
+    display: flex;
+    padding: 0 25px;
+    justify-content: space-around;
+    border-top: 2px solid #f9f637;
+    background: #222;
+}
+
+.music_nav,
+.music_nav_list,
+.music_nav_logo {
+    display: flex;
+}
+
+.music_nav_logo {
+    flex: 1;
+    /*justify-content: center;*/
+    text-align: center;
+}
+
+.music_nav_list {
+    justify-content: center;
+    flex: 2;
+}
+
+.music_header {
+    position: relative;
+    z-index: 999;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #222222;
+    opacity: 0.8;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    border-top: 2px solid #f9f637;
+}
+
+.sidenav .side_link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .side_link:hover {
+    color: #f9f637;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #f9f637;
+    text-decoration: none;
+
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav .side_link {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .music_nav_list .music_link:not(.dashboard) {
+        display: none;
+    }
+    .music_nav_list {
+        justify-content: space-around;
+    }
+
+    .dashboard {
+        font-size: 18px !important;
+    }
+
+    .music_nav_logo .logo {
+        color: #f9f637;
+        padding: 12px 15px 5px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+}

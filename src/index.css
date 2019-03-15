@@ -1,0 +1,31 @@
+*, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #444444;
+    background: #f9f9f9;
+    /*color: #ffffff;*/
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+@media screen and (min-width: 992px) {
+    .section-padding {
+       padding: 90px 0;
+    }
+}
+
+
+
+
+
