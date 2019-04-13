@@ -1,7 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import PropTypes from "prop-types";
 
+
 export const FormContext = React.createContext()
+
+function changeObjectValues(obj, newValue) {
+
+    let newObj = {},
+        arrVals = Object.keys(obj).map(key => ({ [key]: newValue }))
+
+    for (const i of arrVals)
+        newObj = { ...newObj, ...i }
+    return newObj
+}
 
 /**
  * The Login component
@@ -11,20 +22,11 @@ export const FormContext = React.createContext()
 export default function Form(props) {
 
     const [formData, setFormData] = useState(props.formObj)
-    const [errors, setErrors] = useState(createErrors(props.formObj))
+    const [errors, setErrors] = useState(() => {
+        return changeObjectValues(props.formObj, true);
+    });
+    
     const [isSubmitted, setIsSubmitted] = useState(false)
-
-    function createErrors(formData) {
-
-        let errors = {},
-            errArr = Object.keys(formData).map(key => ({ [key]: true }))
-
-        for (const i of errArr)
-            errors = { ...errors, ...i }
-
-        return errors
-    }
-
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -32,7 +34,7 @@ export default function Form(props) {
         if(errors.email || errors.password){
             return
         }
-        props.submitcallback(formData)
+        props.action(formData)
     }
 
     function handleInputData(data) {
@@ -56,6 +58,6 @@ export default function Form(props) {
 
 Form.propTypes = {
     children: PropTypes.element.isRequired,
-    submitcallback: PropTypes.func.isRequired,
+    action: PropTypes.func.isRequired,
     formObj: PropTypes.object.isRequired
 };

@@ -7,23 +7,18 @@ import LoginForm from '../forms/prebuilt/login-form';
  * @See the Register component for more details
  * @param {*} props 
  */
-export default function LoginPage(props) {
+export default function LoginPage({ history }) {
 
     const endpoint = 'http://demo.endpoint.com'
-    const redirectTo = { pathname: '/profile' }
-    const { history } = props
+    // const redirectTo = { pathname: '/profile' }
 
     function login(data){
-
       console.log(data)
-      // history.push(redirectTo)
-      
     }
  
     return (
       <div
         className={"container py-5 my-3"}
-        // style={{ height: "100vh" }}
         id="main"
       >
         <div className={"row justify-content-center"}>
@@ -31,8 +26,9 @@ export default function LoginPage(props) {
             <div className={"text-center"}>
               <h4>Sign in</h4>
             </div>
-            {/* The login form is here */}
+
             <LoginForm login={login} endpoint={endpoint} />
+
             <div className={"row"}>
               <div className={"col-6"}>
                 <p>

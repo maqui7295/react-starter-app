@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from "prop-types";
 
 /**
@@ -26,7 +26,7 @@ export default function Form(props) {
         if (errors.email || errors.password) {
             return
         }
-        props.submitcallback(formData)
+        props.action(formData)
     }
 
    
@@ -58,6 +58,6 @@ export default function Form(props) {
 
 Form.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
-  submitcallback: PropTypes.func.isRequired,
+  action: PropTypes.func.isRequired,
   formObj: PropTypes.object.isRequired
 };

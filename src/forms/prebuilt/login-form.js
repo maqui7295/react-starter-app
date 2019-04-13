@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button'
 import Input from '../input';
 import Form, {FormContext} from '../form';
-import axios from 'axios'
 
 /**
  * The Login component
@@ -15,10 +14,7 @@ export default function LoginForm(props) {
     const [data, setData] = useState({ email: '', password: '' })
 
     function postData(data){
-     
-        axios.post()
-       
-       
+     console.log(data)
         // props.login(data)
     }
 
@@ -26,8 +22,7 @@ export default function LoginForm(props) {
         <Form
             name="login"
             className={"mb-3"}
-            submitcallback={postData}
-            autoComplete={"off"}
+            action={postData}
             noValidate={true}
             formObj={data}
         >

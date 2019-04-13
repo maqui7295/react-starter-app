@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ApiService from '../common/api-service';
 
-// ApiService;
+
 /**
  * Auth service class
  * creates the user on registration
@@ -9,17 +9,17 @@ import ApiService from '../common/api-service';
 export default class AuthService {
 
     /**
-     * @param {object} user
-     * @returns {*} registered user
+     * @param {Object} user
+     * @returns {} registered user
      */
     registerUser(user){
 
     }
 
+    loginUser(user){
+        
+    }
+
     
-
-
-
-
 
 }

@@ -14,11 +14,7 @@ export default function LoginForm(props) {
     const [data, setData] = useState({ email: '', password: '' })
 
     function postData(data){
-
-
        props.login(data)
-
-       
     }
 
     return (
@@ -26,7 +22,7 @@ export default function LoginForm(props) {
         <Form
             name="login"
             className={"mb-3"}
-            submitcallback={postData}
+            action={postData}
             autoComplete={"off"}
             noValidate={true}
             formObj={data}

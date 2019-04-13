@@ -11,14 +11,7 @@ import Button from 'react-bootstrap/Button'
  */
 export default function RegisterComponent(props) {
 
-
-    /**  
-     * The initial error state of the input fields are set to true since the form is invalid by default.
-     * The form submission state is set in order to inform the input fields,
-     * this is required for validation after submission as each input field maintains and validates
-     * the option variable is just used to reduce typing (easily add a method and the form state to the input fields)
-     */
-    
+   
     const [errors, setErrors] = useState({ username: true, email: true, password: true, password_confirmation: true})
     const [formData, setFormData] = useState({username: '', email: '', password: '', password_confirmation: ''})
     const [form_submitted, setFormSubmitted] = useState(false)

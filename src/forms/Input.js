@@ -53,11 +53,13 @@ export default function Input(props) {
         return { data, errors }
     }
 
-    useEffect(() => {
-        if (props.isSubmitted) {
-          props.handleInputData(validateValue())
-        }
-    }) 
+    // useEffect(() => {
+    //   if (props.isSubmitted) {
+    //     let count = 0
+    //     console.log('submitted')
+    //     // props.handleInputData(validateValue());
+    //   }
+    // }); 
 
     return (
         <div className="form-group">
