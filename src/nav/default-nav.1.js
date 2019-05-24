@@ -1,8 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Auth from "../auth/oauth-demo/auth";
 
 
 export default function Navbar(props) {
+
+    const {isAuthenticated, userHasScopes, login, logout } = props.auth;
 
     return (
       
@@ -26,6 +29,24 @@ export default function Navbar(props) {
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/register">Register</NavLink>
                 </li>
+              
+                <li className="nav-item">
+                        <button className="nav-link" onClick={ isAuthenticated() ? logout: login }>
+                            { isAuthenticated() ? "log out" : "log in"}
+                        </button>
+                </li>
+                }
+               
+                { isAuthenticated() &&
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/private">Private</NavLink>
+                </li>
+                }
+                { isAuthenticated() && userHasScopes(["read:courses"]) &&
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/courses">Courses</NavLink>
+                </li>
+                }
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
                 </li>

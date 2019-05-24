@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button'
 import Input from '../input';
 import Form, {FormContext} from '../form';
+
 
 /**
  * The Login component
@@ -17,6 +18,10 @@ export default function LoginForm(props) {
      console.log(data)
         // props.login(data)
     }
+    
+    const context = useContext(FormContext);
+
+    console.log(context);
 
     return (
         <Form
