@@ -52,6 +52,6 @@ export default function RegistrationForm(props) {
 
 }
 
-LoginForm.propTypes = {
+RegistrationForm.propTypes = {
     login: PropTypes.func.isRequired
 };

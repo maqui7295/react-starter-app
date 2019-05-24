@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./nav/default-nav";
 import AppRoutes from './routes'
 
+fetch('http://localhost:3000/users').then(res => res.json()).then(console.log)
+
 
 export default function App(){
   return (
