@@ -22,13 +22,13 @@ export default function DashboardComponent(props) {
                         <NavLink className={'side_link active'} to={`${props.match.url}`}>Dashboard</NavLink>
                         <NavLink className={'side_link'} to={`${props.match.url}/account`}>Account</NavLink>
                         <NavLink className={'side_link'} to={`${props.match.url}/profile`}>Profile</NavLink>
-                        <NavLink className={'side_link'} to={`${props.match.url}/payments`}>Payment History</NavLink>
                         <NavLink className={'side_link'} to={`${props.match.url}/notification`}>Notification</NavLink>
                 </div>
                 <div className="col-12 col-md-12 col-lg-9">
                     <Route exact path={props.match.path} render={() => <ShowDashboard {...props} {...userData} /> } />
                     <Route path={`${props.match.path}/account`} render={() => <AccountComponent {...props} {...userData} /> } />
                     <Route path={`${props.match.path}/profile`} component={ProfileComponent} />
+                    <Route path={`${props.match.path}/notification`} render={prop => <p>Notification</p> } />
                 </div>
             </div>
         </div>

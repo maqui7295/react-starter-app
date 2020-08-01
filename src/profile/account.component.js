@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 import Input from "../forms/input";
 
 export default function AccountComponent(props) {
-
-  const [formData, setFormData] = useState({ username: props.username, email: props.email, 
-                                             password: "", password_confirmation: ""});
-  const [errors, setErrors] = useState({ username: false, email: false, password: false });
+  const [formData, setFormData] = useState({
+    username: props.username,
+    email: props.email,
+    password: "",
+    password_confirmation: ""
+  });
+  const [errors, setErrors] = useState({
+    username: false,
+    email: false,
+    password: false
+  });
   const [form_submitted, setFormSubmitted] = useState(false);
   // let [editPassword, setEditPassword] = useState(false);
 
@@ -21,8 +28,8 @@ export default function AccountComponent(props) {
   }
 
   function handleInputData(data) {
-    setFormData(formData => ({ ...formData, ...data.data }))
-    setErrors(errors => ({ ...errors, ...data.errors }))
+    setFormData(formData => ({ ...formData, ...data.data }));
+    setErrors(errors => ({ ...errors, ...data.errors }));
   }
 
   let error_block = [];
@@ -37,7 +44,10 @@ export default function AccountComponent(props) {
   return (
     <div className={"container"}>
       <p>
-        <Link to={`/dashboard/${props.match.params.email}`} className={"btn btn-secondary"}>
+        <Link
+          to={`/dashboard`}
+          className={"btn btn-secondary"}
+        >
           Back to Dashboard
         </Link>
       </p>
