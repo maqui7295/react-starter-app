@@ -30,6 +30,13 @@ export default function RegistrationForm(props) {
             <FormContext.Consumer>
                 {value => <>
                     <Input
+                        name="username"
+                        type="text"
+                        value={data.username}
+                        {...value}
+                        conditions={"required|email"}
+                    />
+                    <Input
                         name="email"
                         type="email"
                         value={data.email}

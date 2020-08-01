@@ -1,7 +1,7 @@
 /**
  * This is dummy model simulating serverside data
  */
-import _ from 'lodash'
+import {orderBy, find, reject} from 'lodash'
 
 const users = [
     {id: 1, name: 'PetGriff', first_name: 'Peter', last_name: 'Griffin', gender: 'male' },
@@ -16,11 +16,11 @@ export default class UserModel {
     data = users
 
     findAll(){
-        return _.orderBy(this.data, ['id']) || []
+        return orderBy(this.data, ['id']) || []
     }
 
     findOne(id){  
-        return _.find(this.data, {id} ) || []
+        return find(this.data, {id} ) || []
     }
 
     save(user){
@@ -28,7 +28,7 @@ export default class UserModel {
     }
 
     delete(id){
-        return  this.data = _.reject(this.data, {id})
+        return  this.data = reject(this.data, {id})
     }
 
     userExists(id){
