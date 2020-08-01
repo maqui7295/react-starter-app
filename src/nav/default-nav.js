@@ -1,10 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Auth from "../auth/oauth-demo/auth";
-
 
 export default function Navbar(props) {
-
 
     return (
       
@@ -30,9 +27,6 @@ export default function Navbar(props) {
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/admin">Admin</NavLink>
                 </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">

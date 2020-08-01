@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Navbar from "./nav/default-nav";
-import AppRoutes from './routes'
+import AppRoutes from './routes';
 
-fetch('http://localhost:3000/users').then(res => res.json()).then(console.log)
+fetch('http://localhost:3000/users').then(res => res.json()).then(console.log);
+fetch('http://localhost:3000/public').then(res => res.json()).then(console.log).catch(console.error);
 
 
 export default function App(){
@@ -29,4 +30,4 @@ export default function App(){
       </React.Fragment>
     </Router>
   );
-}
+};
